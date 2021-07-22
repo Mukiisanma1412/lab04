@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { response } from 'express'
     export default {
         data() {
             return {
@@ -15,8 +16,7 @@
             }
         },
         created() {
-        //fetch event(by id) and local event data
-        EventService.getEvents(this.id)
+            EventService.getEvent(this.id)
             .then(response => {
                 this.event = response.data
             })
