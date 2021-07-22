@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div v-if="event"> 
         <h1> {{ event.tittle}} </h1>
         <p> {{ event.time }} on {{ event.date }} @ {{ event.location }} </p>
         <p> {{ event.description }} </p>
@@ -8,10 +8,11 @@
 
 <script>
     export default {
+        props: ['id'],
         data() {
             return {
                 event: null,
-                id: 123
+            
             }
         },
         created() {
