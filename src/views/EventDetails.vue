@@ -12,7 +12,6 @@
         data() {
             return {
                 event: null,
-            
             }
         },
         created() {
