@@ -1,7 +1,9 @@
 <template>
   <div id="nav">
     <router-link :to="{ name: 'EventList' }">Home</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link>
+    <router-link :to="{ name: 'About' }">About</router-link> |
+    <router-link :to="{ name: 'EventList'}" >Size +</router-link> |
+    <router-link :to="{ name: 'EventList'}">Size -</router-link>
   </div>
 
   <!-- new element -->
