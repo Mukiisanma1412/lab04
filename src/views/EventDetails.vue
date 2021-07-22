@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import { response } from 'express'
     export default {
         data() {
             return {
