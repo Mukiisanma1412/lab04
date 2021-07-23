@@ -19,6 +19,8 @@
       >
         Next page
       </router-link>
+    
+  
     </div>
   </div>
 </template>
@@ -35,6 +37,10 @@ export default {
     page: {
       type: Number,
       required: true
+    },
+    limit: {
+      type: Number,
+      required: true
     }
   },
   components: {
@@ -43,12 +49,14 @@ export default {
   data() {
     return {
       events: null,
-      totalEvents: 0
+      totalEvents: 0,
+   
     }
   },
+  
   created() {
     watchEffect(() => {
-      EventService.getEvents(2, this.page)
+      EventService.getEvents(this.limit, this.page)
         .then((response) => {
           this.events = response.data
           this.totalEvents = response.headers['x-total-count']
